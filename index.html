@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+        function validate() {
+          var name = document.getElementById("name");
+          var email = document.getElementById("email");
+          var website = document.getElementById("website");
+          var message = document.getElementById("message");
+  
+          if(name.value== "" || email.value== ""||website.value== ""||message.value== ""){
+              document.getElementById("validName").style.visibility = "visible";
+              document.getElementById("validEmail").style.visibility = "visible";
+              document.getElementById("validWebsite").style.visibility = "visible";
+              document.getElementById("validMessage").style.visibility = "visible";
+              name.style.border = "solid 3px red";
+              email.style.border = "solid 3px red";
+              website.style.border = "solid 3px red";
+              message.style.border = "solid 3px red";
+
+              return false;
+          }
+         else{
+            return true;
+          }
+        }
+      </script>
+      <style>
+        form{
+            
+            margin-left: 50px;
+            margin-top: 50px;
+            align-items: center;
+        }
+      </style>
+  </head>
+  <body>
+    
+    <form onsubmit="return validate();">
+
+      Name:<input type="text" name="" id="name" />
+      <label id="validName"style = "color:red; visibility :hidden">This filed is required</label>
+      <br> <br>
+
+      Email:<input type="email" name="" id="email" />
+      <label id="validEmail"style = "color:red; visibility :hidden">A valid email address is required</label>
+      <br> <br>
+
+      Website:<input type="url" name="" id="website" />
+      <label id="validWebsite"style = "color:red; visibility :hidden">A valid url is required</label>
+      <br> <br>
+
+      Message:<textarea name="" id="message" cols="20" rows="4"></textarea>
+      <label id="validMessage"style = "color:red; visibility :hidden">This field is required</label>
+      <br> <br>
+
+      <button type="submit"  >Submit</button>
+    </form>
+   
+
+
+   
+  </body>
+</html>
